@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
+import 'package:portfolio_giovane/app/core/feature/abount.dart';
 import 'package:portfolio_giovane/app/core/widget/build_section.dart';
 import 'package:portfolio_giovane/app/core/feature/skill_cards.dart';
 
@@ -21,7 +22,6 @@ class ContentMain extends StatelessWidget {
     required this.section4,
     required this.section5,
     required this.section6,
-
     required this.scrollController,
   });
 
@@ -34,7 +34,10 @@ class ContentMain extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            SobreMin(keySection: section1),
+            const SizedBox(height: 50),
             SkillCards(keyBuild: section2),
+            const SizedBox(height: 50),
             BuildSection(
               keySection: section3,
               child: Column(
@@ -56,7 +59,7 @@ class ContentMain extends StatelessWidget {
                 ],
               ),
             ),
-
+            const SizedBox(height: 50),
             BuildSection(
               keySection: section4,
               child: Column(
@@ -78,6 +81,7 @@ class ContentMain extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 50),
             BuildSection(
               keySection: section5,
               child: Column(
@@ -133,7 +137,7 @@ class ContentMain extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/email.png',
+                        'lib/app/core/images/email.png',
                         width: 16,
                         height: 16,
                       ),

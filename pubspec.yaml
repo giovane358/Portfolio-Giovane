@@ -63,6 +63,8 @@ flutter:
      - lib/app/core/images/link.png
      - lib/app/core/images/email.png
      - lib/app/core/images/photo.jpg
+     - lib/app/core/images/menu.png
+
 
      
 

@@ -29,7 +29,7 @@ class ContentMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width - 256,
+      width: MediaQuery.of(context).size.width,
       height: double.infinity,
       decoration: BoxDecoration(color: AppColors.blackMain),
       child: SingleChildScrollView(
@@ -122,15 +122,16 @@ class ContentMain extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
+            Container(
+              padding: const EdgeInsets.all(12),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     '© 2025 Giovane Santos',
                     style: TextStyle(color: AppColors.pingText, fontSize: 12),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(width: 28),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

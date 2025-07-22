@@ -39,202 +39,232 @@ class NavSideBar extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.pingText,
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 20,
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Desenvolvedor',
-                  style: TextStyle(color: AppColors.pingText, fontSize: 14),
+                  'Desenvolvedor Back-end e Mobile',
+                  style: TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.6,
-            child: Column(
-              children: [
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section1),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Sobre Mim',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+          Padding(
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.7,
+              child: Column(
+                children: [
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section1),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Sobre Mim', style: TextStyle(fontSize: 16)),
                     ),
                   ),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section2),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Habilidades',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section2),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Habilidades',
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   ),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section3),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Certificações',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section3),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Certificações',
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   ),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section4),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Projetos',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section4),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Projetos', style: TextStyle(fontSize: 16)),
                     ),
                   ),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section5),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Atividades GitHub',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section5),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Atividades GitHub',
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   ),
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return AppColors.roxoback; // Cor ao passar o mouse
-                      }
-                      return null; // Usa o padrão
-                    }),
-                    foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.hovered)) {
-                        return Colors.white; // Cor do texto ao passar o mouse
-                      }
-                      return AppColors.pingText; // Cor padrão do texto
-                    }),
-                  ),
-                  onPressed: () => scrollToSection(section6),
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Contato',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ), // Remova a cor daqui para usar o style do botão
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      minimumSize: WidgetStateProperty.all<Size>(
+                        Size.fromHeight(60),
+                      ),
+                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return AppColors.purpleHover; // Cor ao passar o mouse
+                        }
+                        return null; // Usa o padrão
+                      }),
+                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.hovered)) {
+                          return Colors.white; // Cor do texto ao passar o mouse
+                        }
+                        return AppColors.pingText; // Cor padrão do texto
+                      }),
+                    ),
+                    onPressed: () => scrollToSection(section6),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Contato', style: TextStyle(fontSize: 16)),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
 

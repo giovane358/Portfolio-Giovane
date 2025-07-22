@@ -13,10 +13,15 @@ class BuildSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: keySection,
-      height: MediaQuery.of(context).size.height,
+
       width: double.infinity,
       alignment: Alignment.center,
-      child: child,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+        ),
+        child: child,
+      ),
     );
   }
 }

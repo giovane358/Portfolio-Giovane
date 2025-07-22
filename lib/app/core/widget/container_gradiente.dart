@@ -19,7 +19,7 @@ class ContainerGradiente extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [AppColors.blueback, AppColors.roxoback],
+          colors: [AppColors.blueback, AppColors.purpleback],
         ),
       ),
       child: child,

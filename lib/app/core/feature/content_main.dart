@@ -22,6 +22,7 @@ class ContentMain extends StatelessWidget {
     required this.section4,
     required this.section5,
     required this.section6,
+
     required this.scrollController,
   });
 
@@ -35,9 +36,7 @@ class ContentMain extends StatelessWidget {
         child: Column(
           children: [
             SobreMin(keySection: section1),
-            const SizedBox(height: 50),
             SkillCards(keyBuild: section2),
-            const SizedBox(height: 50),
             BuildSection(
               keySection: section3,
               child: Column(
@@ -49,7 +48,7 @@ class ContentMain extends StatelessWidget {
                         ..shader = LinearGradient(
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
-                          colors: [AppColors.blueback, AppColors.roxoback],
+                          colors: [AppColors.blueback, AppColors.purpleback],
                         ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -59,7 +58,7 @@ class ContentMain extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 50),
+
             BuildSection(
               keySection: section4,
               child: Column(
@@ -71,7 +70,7 @@ class ContentMain extends StatelessWidget {
                         ..shader = LinearGradient(
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
-                          colors: [AppColors.blueback, AppColors.roxoback],
+                          colors: [AppColors.blueback, AppColors.purpleback],
                         ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -81,7 +80,6 @@ class ContentMain extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 50),
             BuildSection(
               keySection: section5,
               child: Column(
@@ -93,7 +91,7 @@ class ContentMain extends StatelessWidget {
                         ..shader = LinearGradient(
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
-                          colors: [AppColors.blueback, AppColors.roxoback],
+                          colors: [AppColors.blueback, AppColors.purpleback],
                         ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -114,7 +112,7 @@ class ContentMain extends StatelessWidget {
                         ..shader = LinearGradient(
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
-                          colors: [AppColors.blueback, AppColors.roxoback],
+                          colors: [AppColors.blueback, AppColors.purpleback],
                         ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
                       fontSize: 32,
                       fontWeight: FontWeight.bold,

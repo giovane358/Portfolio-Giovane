@@ -9,37 +9,48 @@ class SobreMin extends StatelessWidget {
   Widget build(BuildContext context) {
     return BuildSection(
       keySection: keySection,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 50,
-            backgroundImage: AssetImage('lib/app/core/images/photo.jpg'),
+      child: Container(
+        margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(26),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height - 100,
           ),
-          SizedBox(height: 50),
-          Text(
-            'Sobre Mim',
-            style: TextStyle(
-              foreground: Paint()
-                ..shader = LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [Colors.blue, Colors.purple],
-                ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 90,
+                backgroundImage: AssetImage('lib/app/core/images/photo.jpg'),
+              ),
+              SizedBox(height: 50),
+              Text(
+                'Giovane Santos',
+                style: TextStyle(
+                  foreground: Paint()
+                    ..shader = LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Colors.blue, Colors.purple],
+                    ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Me chamo Giovane Santos, tenho 21 anos e sou apaixonado por tecnologia. '
+                'Atualmente, sou estudante do 2º semestre de Engenharia de Software na Universidade Eniac, onde venho aprimorando meus conhecimentos em desenvolvimento de sistemas e arquitetura de software.\n\n'
+                'Sou graduado em Técnico em Desenvolvimento de Sistemas pela ETEC Prof. Horácio Augusto da Silveira, e também em Técnico em Segurança do Trabalho pelo SENAC, o que me proporcionou uma formação multidisciplinar, aliando raciocínio lógico, pensamento crítico e responsabilidade profissional.\n\n'
+                'Tenho foco em aprendizado contínuo e busco constante evolução na área de desenvolvimento, com ênfase em Back-end utilizando Java e desenvolvimento mobile com Flutter. '
+                'Meu objetivo é atuar em projetos que desafiem minhas habilidades, permitam crescimento profissional e contribuam para soluções tecnológicas de impacto.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, color: Colors.white70),
+              ),
+              SizedBox(height: 50),
+            ],
           ),
-          SizedBox(height: 20),
-          Text(
-            'Sou um desenvolvedor apaixonado por tecnologia e inovação. '
-            'Tenho experiência em desenvolvimento de software, com foco em '
-            'criação de soluções eficientes e escaláveis.',
-            style: TextStyle(fontSize: 16, color: Colors.white70),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 50),
-        ],
+        ),
       ),
     );
   }

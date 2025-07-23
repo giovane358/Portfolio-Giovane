@@ -1,3 +1,4 @@
+// build_sidebar.dart
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
 
@@ -9,6 +10,7 @@ class NavSideBar extends StatelessWidget {
   final GlobalKey section4;
   final GlobalKey section5;
   final GlobalKey section6;
+  final String activeSection;
 
   const NavSideBar({
     super.key,
@@ -19,6 +21,7 @@ class NavSideBar extends StatelessWidget {
     required this.section4,
     required this.section5,
     required this.section6,
+    required this.activeSection,
   });
 
   @override
@@ -32,8 +35,8 @@ class NavSideBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 24.0),
             child: Column(
-              children: [
-                const SizedBox(height: 12),
+              children: const [
+                SizedBox(height: 12),
                 Text(
                   'Giovane Santos',
                   style: TextStyle(
@@ -42,7 +45,7 @@ class NavSideBar extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4),
                 Text(
                   'Desenvolvedor Back-end e Mobile',
                   style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -51,223 +54,26 @@ class NavSideBar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 5, right: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.7,
               child: Column(
                 children: [
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section1),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Sobre Mim', style: TextStyle(fontSize: 16)),
-                    ),
-                  ),
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section2),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Habilidades',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section3),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Certificações',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section4),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Projetos', style: TextStyle(fontSize: 16)),
-                    ),
-                  ),
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section5),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Atividades GitHub',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  ),
-                  TextButton(
-                    style: ButtonStyle(
-                      shape: WidgetStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      minimumSize: WidgetStateProperty.all<Size>(
-                        Size.fromHeight(60),
-                      ),
-                      overlayColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return AppColors.purpleHover; // Cor ao passar o mouse
-                        }
-                        return null; // Usa o padrão
-                      }),
-                      foregroundColor: WidgetStateProperty.resolveWith<Color?>((
-                        Set<WidgetState> states,
-                      ) {
-                        if (states.contains(WidgetState.hovered)) {
-                          return Colors.white; // Cor do texto ao passar o mouse
-                        }
-                        return AppColors.pingText; // Cor padrão do texto
-                      }),
-                    ),
-                    onPressed: () => scrollToSection(section6),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Contato', style: TextStyle(fontSize: 16)),
-                    ),
-                  ),
+                  _buildButton('Sobre Mim', section1, 'section1'),
+                  SizedBox(height: 5),
+                  _buildButton('Habilidades', section2, 'section2'),
+                  SizedBox(height: 5),
+                  _buildButton('Certificações', section3, 'section3'),
+                  SizedBox(height: 5),
+                  _buildButton('Projetos', section4, 'section4'),
+                  SizedBox(height: 5),
+                  _buildButton('Atividades GitHub', section5, 'section5'),
+                  SizedBox(height: 5),
+                  _buildButton('Contato', section6, 'section6'),
                 ],
               ),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Row(
@@ -292,6 +98,35 @@ class NavSideBar extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildButton(String label, GlobalKey key, String sectionName) {
+    final isActive = activeSection == sectionName;
+    return TextButton(
+      style: ButtonStyle(
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        ),
+        minimumSize: WidgetStateProperty.all<Size>(Size.fromHeight(60)),
+        backgroundColor: WidgetStateProperty.all(
+          isActive ? AppColors.purpleHover : Colors.transparent,
+        ),
+        foregroundColor: WidgetStateProperty.all(
+          isActive ? Colors.white : AppColors.pingText,
+        ),
+        overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(WidgetState.hovered)) {
+            return AppColors.purpleHover;
+          }
+          return null;
+        }),
+      ),
+      onPressed: () => scrollToSection(key),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(label, style: const TextStyle(fontSize: 16)),
       ),
     );
   }

@@ -1,3 +1,4 @@
+// home_page.dart
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
 import 'package:portfolio_giovane/app/core/widget/container_gradiente.dart';
@@ -22,8 +23,15 @@ class HomePageState extends State<HomePage> {
   final GlobalKey section6 = GlobalKey();
 
   bool showOverlaySidebar = false;
+  String activeSection = 'section1';
 
-  void scrollTo(GlobalKey key) {
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(_onScroll);
+  }
+
+  void scrollTo(GlobalKey key, String sectionName) {
     final context = key.currentContext;
     if (context != null) {
       Scrollable.ensureVisible(
@@ -31,13 +39,43 @@ class HomePageState extends State<HomePage> {
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );
+      setState(() {
+        activeSection = sectionName;
+      });
     }
 
-    // Fecha o sidebar ao clicar em um item (em modo mobile)
     if (showOverlaySidebar) {
       setState(() {
         showOverlaySidebar = false;
       });
+    }
+  }
+
+  void _onScroll() {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final sections = {
+      'section1': section1,
+      'section2': section2,
+      'section3': section3,
+      'section4': section4,
+      'section5': section5,
+      'section6': section6,
+    };
+
+    for (var entry in sections.entries) {
+      final keyContext = entry.value.currentContext;
+      if (keyContext != null) {
+        final box = keyContext.findRenderObject() as RenderBox;
+        final offset = box.localToGlobal(Offset.zero).dy;
+        if (offset >= 0 && offset < screenHeight * 0.5) {
+          if (activeSection != entry.key) {
+            setState(() {
+              activeSection = entry.key;
+            });
+          }
+          break;
+        }
+      }
     }
   }
 
@@ -46,26 +84,23 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final bool isWideScreen = constraints.maxWidth > 600;
+          final bool isWideScreen = constraints.maxWidth > 800;
 
           if (isWideScreen) {
-            // Layout com sidebar fixo
             return Row(
               children: [
                 ContainerGradiente(
                   width: 256,
-                  child: Column(
-                    children: [
-                      NavSideBar(
-                        scrollToSection: scrollTo,
-                        section1: section1,
-                        section2: section2,
-                        section3: section3,
-                        section4: section4,
-                        section5: section5,
-                        section6: section6,
-                      ),
-                    ],
+                  child: NavSideBar(
+                    scrollToSection: (key) =>
+                        scrollTo(key, _getSectionName(key)),
+                    section1: section1,
+                    section2: section2,
+                    section3: section3,
+                    section4: section4,
+                    section5: section5,
+                    section6: section6,
+                    activeSection: activeSection,
                   ),
                 ),
                 Expanded(
@@ -82,7 +117,6 @@ class HomePageState extends State<HomePage> {
               ],
             );
           } else {
-            // Layout com conteúdo principal + menu sobreposto via botão
             return Stack(
               children: [
                 ContentMain(
@@ -122,18 +156,16 @@ class HomePageState extends State<HomePage> {
                           alignment: Alignment.centerLeft,
                           child: ContainerGradiente(
                             width: 256,
-                            child: Column(
-                              children: [
-                                NavSideBar(
-                                  scrollToSection: scrollTo,
-                                  section1: section1,
-                                  section2: section2,
-                                  section3: section3,
-                                  section4: section4,
-                                  section5: section5,
-                                  section6: section6,
-                                ),
-                              ],
+                            child: NavSideBar(
+                              scrollToSection: (key) =>
+                                  scrollTo(key, _getSectionName(key)),
+                              section1: section1,
+                              section2: section2,
+                              section3: section3,
+                              section4: section4,
+                              section5: section5,
+                              section6: section6,
+                              activeSection: activeSection,
                             ),
                           ),
                         ),
@@ -146,5 +178,14 @@ class HomePageState extends State<HomePage> {
         },
       ),
     );
+  }
+
+  String _getSectionName(GlobalKey key) {
+    if (key == section1) return 'section1';
+    if (key == section2) return 'section2';
+    if (key == section3) return 'section3';
+    if (key == section4) return 'section4';
+    if (key == section5) return 'section5';
+    return 'section6';
   }
 }

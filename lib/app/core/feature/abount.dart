@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_giovane/app/core/colors/colors.dart';
 import 'package:portfolio_giovane/app/core/widget/build_section.dart';
+import 'package:portfolio_giovane/app/core/widget/container_cards.dart';
 
 class SobreMin extends StatelessWidget {
   final GlobalKey keySection;
@@ -10,8 +12,8 @@ class SobreMin extends StatelessWidget {
     return BuildSection(
       keySection: keySection,
       child: Container(
-        margin: const EdgeInsets.all(20),
-        padding: const EdgeInsets.all(26),
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(40),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height - 100,
@@ -20,7 +22,7 @@ class SobreMin extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                radius: 90,
+                radius: 80,
                 backgroundImage: AssetImage('lib/app/core/images/photo.jpg'),
               ),
               SizedBox(height: 50),
@@ -37,7 +39,7 @@ class SobreMin extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Text(
                 'Me chamo Giovane Santos, tenho 21 anos e sou apaixonado por tecnologia. '
                 'Atualmente, sou estudante do 2º semestre de Engenharia de Software na Universidade Eniac, onde venho aprimorando meus conhecimentos em desenvolvimento de sistemas e arquitetura de software.\n\n'
@@ -47,7 +49,28 @@ class SobreMin extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, color: Colors.white70),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 40),
+              Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                children: [
+                  containerCard(
+                    colorText: AppColors.pingText,
+                    colorTags: AppColors.purpleTagsCard,
+                    tags: '1+ Anos de Experiência',
+                  ),
+                  containerCard(
+                    colorText: AppColors.blueText,
+                    colorTags: AppColors.blueback,
+                    tags: 'Backend Java',
+                  ),
+                  containerCard(
+                    colorText: AppColors.pingText,
+                    colorTags: AppColors.purpleTagsCard,
+                    tags: 'Mobile Flutter',
+                  ),
+                ],
+              ),
             ],
           ),
         ),

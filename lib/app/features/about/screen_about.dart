@@ -3,9 +3,10 @@ import 'package:portfolio_giovane/app/core/colors/colors.dart';
 import 'package:portfolio_giovane/app/core/widget/build_section.dart';
 import 'package:portfolio_giovane/app/core/widget/container_cards.dart';
 
-class SobreMin extends StatelessWidget {
+class About extends StatelessWidget {
   final GlobalKey keySection;
-  const SobreMin({super.key, required this.keySection});
+
+  const About({super.key, required this.keySection});
 
   @override
   Widget build(BuildContext context) {
@@ -57,16 +58,19 @@ class SobreMin extends StatelessWidget {
                   containerCard(
                     colorText: AppColors.pingText,
                     colorTags: AppColors.purpleTagsCard,
+                    colorHover: AppColors.purpleHover,
                     tags: '1+ Anos de Experiência',
                   ),
                   containerCard(
                     colorText: AppColors.blueText,
                     colorTags: AppColors.blueback,
+                    colorHover: AppColors.purpleHover,
                     tags: 'Backend Java',
                   ),
                   containerCard(
                     colorText: AppColors.pingText,
                     colorTags: AppColors.purpleTagsCard,
+                    colorHover: AppColors.purpleHover,
                     tags: 'Mobile Flutter',
                   ),
                 ],

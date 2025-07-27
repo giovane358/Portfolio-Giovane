@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/feature/home.dart';
+import 'package:portfolio_giovane/app/features/home/screen_home.dart';
 
 void main() {
   runApp(const MyApp());

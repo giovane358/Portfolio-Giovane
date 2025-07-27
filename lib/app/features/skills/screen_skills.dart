@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/colors/colors.dart';
 import 'package:portfolio_giovane/app/core/widget/build_section.dart';
 import 'package:portfolio_giovane/app/core/widget/container_skill_card.dart';
 
@@ -21,12 +20,7 @@ class SkillCards extends StatelessWidget {
                 Text(
                   'Soft Skills',
                   style: TextStyle(
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [AppColors.blueback, AppColors.purpleback],
-                      ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
+                    color: Colors.purple,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                   ),
@@ -40,7 +34,7 @@ class SkillCards extends StatelessWidget {
                       spacing: 16,
                       runSpacing: 16,
                       children: [
-                        skillCardPing(
+                        skillCardPurpel(
                           title: "Back-end Development",
                           description:
                               "Desenvolvimento de APIs RESTful e microsserviços robustos.",
@@ -80,12 +74,7 @@ class SkillCards extends StatelessWidget {
                 Text(
                   'Hard Skills',
                   style: TextStyle(
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [AppColors.blueback, AppColors.purpleback],
-                      ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
+                    color: Colors.purple,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                   ),
@@ -99,7 +88,7 @@ class SkillCards extends StatelessWidget {
                       spacing: 16,
                       runSpacing: 16,
                       children: [
-                        skillCardPing(
+                        skillCardPurpel(
                           title: "Back-end Development",
                           description:
                               "Desenvolvimento de APIs RESTful e microsserviços robustos.",

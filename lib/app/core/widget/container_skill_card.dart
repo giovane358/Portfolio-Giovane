@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
 
-Widget skillCardPing({required title, required description, required tags}) {
+Widget skillCardPurpel({required title, required description, required tags}) {
   return Container(
     margin: const EdgeInsets.all(12),
     padding: const EdgeInsets.all(16),

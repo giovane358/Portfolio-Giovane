@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
 import 'package:portfolio_giovane/app/core/widget/container_gradiente.dart';
-import 'package:portfolio_giovane/app/core/feature/content_main.dart';
+import 'package:portfolio_giovane/app/features/home/content_main.dart';
 import 'package:portfolio_giovane/app/core/widget/build_sidebar.dart';
 
 class HomePage extends StatefulWidget {

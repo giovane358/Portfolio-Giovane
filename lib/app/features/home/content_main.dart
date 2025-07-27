@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_giovane/app/core/colors/colors.dart';
-import 'package:portfolio_giovane/app/core/feature/abount.dart';
+import 'package:portfolio_giovane/app/features/about/screen_about.dart';
 import 'package:portfolio_giovane/app/core/widget/build_section.dart';
-import 'package:portfolio_giovane/app/core/feature/skill_cards.dart';
+import 'package:portfolio_giovane/app/features/skills/screen_skills.dart';
 
 class ContentMain extends StatelessWidget {
   final GlobalKey section1;
@@ -35,7 +35,7 @@ class ContentMain extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SobreMin(keySection: section1),
+            About(keySection: section1),
             SkillCards(keyBuild: section2),
             BuildSection(
               keySection: section3,

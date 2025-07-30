@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/colors/colors.dart';
-import 'package:portfolio_giovane/app/core/widget/build_section.dart';
-import 'package:portfolio_giovane/app/core/widget/container_cards.dart';
+import '../../app.dart';
 
 class About extends StatelessWidget {
   final GlobalKey keySection;
@@ -24,7 +22,7 @@ class About extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 80,
-                backgroundImage: AssetImage('lib/app/core/images/photo.jpg'),
+                backgroundImage: AssetImage('lib/app/assets/images/photo.jpg'),
               ),
               SizedBox(height: 50),
               Text(

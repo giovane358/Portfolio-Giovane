@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/colors/colors.dart';
+import '../../app.dart';
 
 Widget skillCardPurpel({required title, required description, required tags}) {
   return Container(

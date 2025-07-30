@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/colors/colors.dart';
-import 'package:portfolio_giovane/app/features/about/screen_about.dart';
-import 'package:portfolio_giovane/app/core/widget/build_section.dart';
-import 'package:portfolio_giovane/app/features/skills/screen_skills.dart';
+import '../../app.dart';
 
 class ContentMain extends StatelessWidget {
   final GlobalKey section1;
@@ -37,27 +34,7 @@ class ContentMain extends StatelessWidget {
           children: [
             About(keySection: section1),
             SkillCards(keyBuild: section2),
-            BuildSection(
-              keySection: section3,
-              child: Column(
-                children: [
-                  Text(
-                    'Certificações',
-                    style: TextStyle(
-                      foreground: Paint()
-                        ..shader = LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [AppColors.blueback, AppColors.purpleback],
-                        ).createShader(Rect.fromLTWH(0.0, 0.0, 600.0, 0.0)),
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  // Add your certifications widgets here
-                ],
-              ),
-            ),
+            SectionCertification(keyBuild: section3),
 
             BuildSection(
               keySection: section4,
@@ -136,7 +113,7 @@ class ContentMain extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'lib/app/core/images/email.png',
+                        'lib/app/assets/images/email.png',
                         width: 16,
                         height: 16,
                       ),

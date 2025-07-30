@@ -13,7 +13,6 @@ class BuildSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: keySection,
-
       width: double.infinity,
       alignment: Alignment.center,
       child: ConstrainedBox(

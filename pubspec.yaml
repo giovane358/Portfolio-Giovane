@@ -64,6 +64,7 @@ flutter:
      - lib/app/assets/images/email.png
      - lib/app/assets/images/photo.jpg
      - lib/app/assets/images/menu.png
+     - lib/app/assets/images/links.png
 
 
      

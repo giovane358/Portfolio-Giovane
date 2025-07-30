@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/widget/build_section.dart';
-import 'package:portfolio_giovane/app/core/widget/container_skill_card.dart';
+import '../../app.dart';
 
 class SkillCards extends StatelessWidget {
   final GlobalKey keyBuild;

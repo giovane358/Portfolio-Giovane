@@ -9,5 +9,4 @@ export 'features/skills/screen_skills.dart';
 export 'features/home/content_main.dart';
 export 'features/home/screen_home.dart';
 export 'features/certifications/screen_certifications.dart';
-
-
+export 'features/sidebar/screen_sidebar.dart';

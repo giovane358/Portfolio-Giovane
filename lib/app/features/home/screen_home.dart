@@ -1,9 +1,6 @@
 // home_page.dart
 import 'package:flutter/material.dart';
-import 'package:portfolio_giovane/app/core/colors/colors.dart';
-import 'package:portfolio_giovane/app/core/widget/container_gradiente.dart';
-import 'package:portfolio_giovane/app/features/home/content_main.dart';
-import 'package:portfolio_giovane/app/core/widget/build_sidebar.dart';
+import '../../app.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -84,14 +81,14 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final bool isWideScreen = constraints.maxWidth > 800;
+          final bool isWideScreen = constraints.maxWidth > 900;
 
           if (isWideScreen) {
             return Row(
               children: [
                 ContainerGradiente(
                   width: 256,
-                  child: NavSideBar(
+                  child: ScreenSideBar(
                     scrollToSection: (key) =>
                         scrollTo(key, _getSectionName(key)),
                     section1: section1,
@@ -132,7 +129,7 @@ class HomePageState extends State<HomePage> {
                   top: 16,
                   left: 16,
                   child: IconButton(
-                    icon: Image.asset('lib/app/core/images/menu.png'),
+                    icon: Image.asset('lib/app/assets/images/menu.png'),
                     iconSize: 32,
                     color: AppColors.pingText,
                     onPressed: () {
@@ -156,7 +153,7 @@ class HomePageState extends State<HomePage> {
                           alignment: Alignment.centerLeft,
                           child: ContainerGradiente(
                             width: 256,
-                            child: NavSideBar(
+                            child: ScreenSideBar(
                               scrollToSection: (key) =>
                                   scrollTo(key, _getSectionName(key)),
                               section1: section1,
